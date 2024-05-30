@@ -39,7 +39,7 @@ resource "aws_instance" "rabbitmq" {
   vpc_security_group_ids = [aws_security_group.rabbitmq.id]
   subnet_id = var.subnet_ids[0]
   tags = var.tags
-  user_data = "${file("${path.module}/userdata.sh")}"
+  user_data = file("${path.module}/userdata.sh")
   }
 
 
